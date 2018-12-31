@@ -5,8 +5,10 @@
 package com.gui;
 
 import com.system.Main;
+import com.system.settings.Settings;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -15,7 +17,91 @@ import javax.swing.*;
  */
 public class MastermindGUI extends JFrame {
 
-    public MastermindGUI() { initComponents(); }
+    private Settings settings;
+
+    public MastermindGUI(Settings settings) {
+        this.settings = settings;
+        initComponents();
+    }
+
+    public void button2ActionPerformed(ActionEvent e){
+        // black
+
+        if (settings.UserChooses.length < 4) {
+            if (settings.UserChooses.length >= 0) {
+                settings.UserChooses[settings.UserChooses.length] = 1;
+            } else {
+              //  settings.UserChooses[0] = 1;
+
+            }
+        }
+    }
+
+    public void button3ActionPerformed(ActionEvent e) {
+        // white
+        if (settings.UserChooses.length < 4) {
+            if (settings.UserChooses.length >= 0) {
+                settings.UserChooses[settings.UserChooses.length] = 2;
+            } else {
+               settings.UserChooses[0] = 2;
+
+            }
+        }
+    }
+
+
+    public void button4ActionPerformed(ActionEvent e){
+        // red
+        if (settings.UserChooses.length < 4) {
+            if (settings.UserChooses.length >= 0) {
+                settings.UserChooses[settings.UserChooses.length] = 3;
+            } else {
+              //  settings.UserChooses[0] = 3;
+
+            }
+        }
+    }
+
+    public void button5ActionPerformed(ActionEvent e){
+        // purple
+        if (settings.UserChooses.length < 4) {
+            if (settings.UserChooses.length >= 0) {
+                settings.UserChooses[settings.UserChooses.length] = 4;
+            } else {
+             //   settings.UserChooses[0] = 4;
+
+            }
+        }
+    }
+
+    public void button6ActionPerformed(ActionEvent e){
+        // green
+        if (settings.UserChooses.length < 4) {
+            if (settings.UserChooses.length >= 0) {
+                settings.UserChooses[settings.UserChooses.length] = 5;
+            } else {
+             //   settings.UserChooses[0] = 5;
+
+            }
+        }
+    }
+
+    public void button7ActionPerformed(ActionEvent e){
+        // blue
+        if (settings.UserChooses.length < 4) {
+            if (settings.UserChooses.length >= 0) {
+                settings.UserChooses[settings.UserChooses.length] = 6;
+            } else {
+              //  settings.UserChooses[0] = 6;
+
+            }
+        }
+    }
+
+    public void button8ActionPerformed(ActionEvent e){
+        // evaluate
+        settings.setEvaluated(true);
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -34,6 +120,9 @@ public class MastermindGUI extends JFrame {
         label6 = new JLabel();
         button8 = new JButton();
         label7 = new JLabel();
+
+
+
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -61,6 +150,7 @@ public class MastermindGUI extends JFrame {
         //---- button2 ----
         button2.setText("Black");
         button2.setForeground(Color.black);
+        button2.addActionListener(e -> button2ActionPerformed(e));
         button2.setFont(new Font("Segoe UI", Font.BOLD, 20));
         button2.setIcon(new ImageIcon(this.getClass().getResource("../Content/Dot_Black.png")) {
         });
@@ -68,25 +158,30 @@ public class MastermindGUI extends JFrame {
         //---- button3 ----
         button3.setText("White");
         button3.setForeground(Color.white);
+        button3.addActionListener(e -> button3ActionPerformed(e));
         button3.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button4 ----
         button4.setText("Red");
         button4.setForeground(Color.red);
+        button4.addActionListener(e -> button4ActionPerformed(e));
         button4.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button5 ----
         button5.setText("Purple");
+        button5.addActionListener(e -> button5ActionPerformed(e));
         button5.setForeground(new Color(153, 0, 153));
         button5.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button6 ----
         button6.setText("Green");
+        button6.addActionListener(e -> button6ActionPerformed(e));
         button6.setForeground(new Color(0, 153, 0));
         button6.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button7 ----
         button7.setText("Blue");
+        button7.addActionListener(e -> button7ActionPerformed(e));
         button7.setForeground(new Color(0, 153, 204));
         button7.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
@@ -96,6 +191,7 @@ public class MastermindGUI extends JFrame {
 
         //---- button8 ----
         button8.setText("Evaluate");
+        button8.addActionListener(e -> button8ActionPerformed(e));
         button8.setFont(new Font("Segoe UI", Font.BOLD, 20));
         button8.setBackground(new Color(204, 204, 204));
 

@@ -9,7 +9,7 @@ public class Game extends GameFunctions{
 
     public Game(Settings settings){
         this.settings = settings;
-        mainGUI = new MastermindGUI();
+        mainGUI = new MastermindGUI(settings);
     }
 
 
@@ -23,7 +23,7 @@ public class Game extends GameFunctions{
                     case "Easy":
                         EasyGameMode();
                         break;
-                    case "Medium":
+                    case "Normal":
                         MediumGameMode();
                         break;
                     case "Hard":
