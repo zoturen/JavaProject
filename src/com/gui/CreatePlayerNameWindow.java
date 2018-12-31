@@ -4,6 +4,10 @@
 
 package com.gui;
 
+import com.system.Game;
+import com.system.Main;
+import com.system.settings.Settings;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -12,12 +16,29 @@ import javax.swing.*;
  * @author Marcus
  */
 public class CreatePlayerNameWindow extends JFrame {
+
+    private Settings settings;
+
     public CreatePlayerNameWindow() {
+
+        this.settings = new Settings();
         initComponents();
+
     }
 
     private void button1ActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        setVisible(false);
+
+        settings.setRunning(true);
+        settings.setDifficulty(getDifficulty());
+        settings.setPlayerName(getPlayerName());
+
+        System.out.println("Player name: " + settings.getPlayerName() + " Difficulty: " + settings.getDifficulty());
+
+        Game game = new Game(settings);
+        game.GameLoop();
+
+
     }
 
     private void initComponents() {
@@ -85,6 +106,15 @@ public class CreatePlayerNameWindow extends JFrame {
     // Generated using JFormDesigner Evaluation license - Marcus
     private JButton button1;
     private JLabel label1;
+
+    public String getPlayerName() {
+        return textField1.getText();
+    }
+
+    public String getDifficulty() {
+        return comboBox1.getSelectedItem().toString();
+    }
+
     private JTextField textField1;
     private JLabel label2;
     private JLabel label3;

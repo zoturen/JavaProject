@@ -4,16 +4,18 @@
 
 package com.gui;
 
+import com.system.Main;
+
 import java.awt.*;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
  * @author unknown
  */
 public class MastermindGUI extends JFrame {
-    public MastermindGUI() {
-        initComponents();
-    }
+
+    public MastermindGUI() { initComponents(); }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -60,6 +62,8 @@ public class MastermindGUI extends JFrame {
         button2.setText("Black");
         button2.setForeground(Color.black);
         button2.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button2.setIcon(new ImageIcon(this.getClass().getResource("../Content/Dot_Black.png")) {
+        });
 
         //---- button3 ----
         button3.setText("White");
