@@ -18,10 +18,12 @@ import javax.swing.*;
 public class CreatePlayerNameWindow extends JFrame {
 
     private Settings settings;
+    private Game game;
 
-    public CreatePlayerNameWindow() {
+    public CreatePlayerNameWindow(Settings settings, Game game) {
 
-        this.settings = new Settings();
+        this.game = game;
+        this.settings = settings;
         initComponents();
 
     }
@@ -35,7 +37,7 @@ public class CreatePlayerNameWindow extends JFrame {
 
         System.out.println("Player name: " + settings.getPlayerName() + " Difficulty: " + settings.getDifficulty());
 
-        Game game = new Game(settings);
+
         game.GameLoop();
 
 

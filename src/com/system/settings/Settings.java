@@ -1,16 +1,18 @@
 package com.system.settings;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Settings {
 
-    private boolean isRunning = false;
-    private boolean gameWon = false;
+    volatile private boolean isRunning = false;
+    volatile private boolean gameWon = false;
 
 
 
 
-    private boolean evaluated = false;
+    volatile private boolean evaluated = false;
 
     private int tries = 1;
 
@@ -44,9 +46,9 @@ public class Settings {
     public int UserChoiceFive;
     public int UserChoiceSix;
 
-    public int UserChooses [] = {1, 2, 3, 4};
+    public List<Integer> UserChoices = new ArrayList<Integer>();
 
-    public int evaluateUserChoices(int one, int two, int three, int four){
+    /** public int evaluateUserChoices(int one, int two, int three, int four){
         do {
             UserChooses[0] = one;
             UserChooses[1] = two;
@@ -57,7 +59,7 @@ public class Settings {
         return -1;
     }
 
-
+*/
     public boolean isEvaluated() { return evaluated; }
 
     public boolean isRunning() {

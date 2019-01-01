@@ -27,80 +27,59 @@ public class MastermindGUI extends JFrame {
     public void button2ActionPerformed(ActionEvent e){
         // black
 
-        if (settings.UserChooses.length < 4) {
-            if (settings.UserChooses.length >= 0) {
-                settings.UserChooses[settings.UserChooses.length] = 1;
-            } else {
-              //  settings.UserChooses[0] = 1;
-
-            }
+        if (settings.UserChoices.size() <= 4) {
+            settings.UserChoices.add(1);
         }
     }
 
     public void button3ActionPerformed(ActionEvent e) {
         // white
-        if (settings.UserChooses.length < 4) {
-            if (settings.UserChooses.length >= 0) {
-                settings.UserChooses[settings.UserChooses.length] = 2;
-            } else {
-               settings.UserChooses[0] = 2;
-
-            }
+        if (settings.UserChoices.size() <= 4) {
+            settings.UserChoices.add(2);
         }
     }
 
 
     public void button4ActionPerformed(ActionEvent e){
         // red
-        if (settings.UserChooses.length < 4) {
-            if (settings.UserChooses.length >= 0) {
-                settings.UserChooses[settings.UserChooses.length] = 3;
-            } else {
-              //  settings.UserChooses[0] = 3;
-
-            }
+        if (settings.UserChoices.size() <= 4) {
+            settings.UserChoices.add(3);
         }
     }
 
     public void button5ActionPerformed(ActionEvent e){
         // purple
-        if (settings.UserChooses.length < 4) {
-            if (settings.UserChooses.length >= 0) {
-                settings.UserChooses[settings.UserChooses.length] = 4;
-            } else {
-             //   settings.UserChooses[0] = 4;
-
-            }
+        if (settings.UserChoices.size() <= 4) {
+            settings.UserChoices.add(4);
         }
     }
 
     public void button6ActionPerformed(ActionEvent e){
         // green
-        if (settings.UserChooses.length < 4) {
-            if (settings.UserChooses.length >= 0) {
-                settings.UserChooses[settings.UserChooses.length] = 5;
-            } else {
-             //   settings.UserChooses[0] = 5;
-
-            }
+        if (settings.UserChoices.size() <= 4) {
+            settings.UserChoices.add(5);
         }
     }
 
     public void button7ActionPerformed(ActionEvent e){
         // blue
-        if (settings.UserChooses.length < 4) {
-            if (settings.UserChooses.length >= 0) {
-                settings.UserChooses[settings.UserChooses.length] = 6;
-            } else {
-              //  settings.UserChooses[0] = 6;
-
-            }
+        if (settings.UserChoices.size() <= 4) {
+            settings.UserChoices.add(6);
         }
     }
 
     public void button8ActionPerformed(ActionEvent e){
         // evaluate
-        settings.setEvaluated(true);
+            if (settings.UserChoices.size() >= 4) {
+                settings.setEvaluated(true);
+            } else {
+                int size = settings.UserChoices.size();
+                System.out.println("You only have selected " + size + " colors!, you need to select 4!");
+            }
+            /**System.out.println("Pressed evaluate");
+            System.out.println("User contains: "+ settings.UserChoices.size() + " elements");
+            System.out.println("Player name: " + settings.getPlayerName()); */
+
     }
 
     private void initComponents() {

@@ -3,36 +3,61 @@ package com.system;
 import com.gui.MastermindGUI;
 import com.system.settings.Settings;
 
-public class Game extends GameFunctions{
+
+public class Game {
     private Settings settings;
     private MastermindGUI mainGUI;
+    private GameFunctions gameFunctions;
 
-    public Game(Settings settings){
+
+
+    public Game(Settings settings, GameFunctions gameFunctions){
         this.settings = settings;
+        this.gameFunctions = gameFunctions;
         mainGUI = new MastermindGUI(settings);
+
     }
 
+    public class NewThread extends Thread{
 
-    public void GameLoop() {
+        private NewThread(){
 
-        mainGUI.setVisible(true);
+        }
 
-        if (!settings.isGameWon() && settings.isRunning()) {
+        @Override
+        public void run() {
+
+
+
+            if (!settings.isGameWon() && settings.isRunning()) {
 
                 switch (settings.getDifficulty()) {
                     case "Easy":
-                        EasyGameMode();
+                        gameFunctions.EasyGameMode();
                         break;
                     case "Normal":
-                        MediumGameMode();
+                        gameFunctions.MediumGameMode();
                         break;
                     case "Hard":
-                        HardGameMode();
+                        gameFunctions.HardGameMode();
                         break;
                 }
-        } else {
-            mainGUI.setVisible(false);
+            } else {
+                mainGUI.setVisible(false);
 
+            }
         }
+    }
+
+    public void GameLoop() {
+
+
+
+        Thread gameThread = new NewThread();
+
+        gameThread.start();
+
+        mainGUI.setVisible(true);
+
     }
 }

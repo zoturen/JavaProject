@@ -3,12 +3,17 @@ package com.system;
 import com.gui.CreatePlayerNameWindow;
 import com.system.settings.Settings;
 
+
 public class Main {
 
 
     public static void main(String[] args){
 
-        CreatePlayerNameWindow playerChoice = new CreatePlayerNameWindow();
+        Settings settings = new Settings();
+        GameFunctions gameFunctions = new GameFunctions(settings);
+        Game game = new Game(settings, gameFunctions);
+        CreatePlayerNameWindow playerChoice = new CreatePlayerNameWindow(settings, game);
+
 
         playerChoice.setVisible(true);
 

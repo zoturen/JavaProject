@@ -4,12 +4,18 @@ import com.gui.MastermindGUI;
 import com.system.settings.Settings;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class GameFunctions extends Settings {
+public class GameFunctions {
 
+    private Settings settings;
 
+    public GameFunctions(Settings settings){
+        this.settings = settings;
+    }
 
 
     public void EasyGameMode(){
@@ -23,27 +29,59 @@ public class GameFunctions extends Settings {
     public void MediumGameMode() {
         System.out.println("Medium");
 
-        MasterChoiceOne = ThreadLocalRandom.current().nextInt(1, 6);
-        MasterChoiceTwo = ThreadLocalRandom.current().nextInt(1, 6);
-        MasterChoiceThree = ThreadLocalRandom.current().nextInt(1, 6);
-        MasterChoiceFour = ThreadLocalRandom.current().nextInt(1, 6);
+        settings.MasterChoiceOne = ThreadLocalRandom.current().nextInt(1, 6);
+        settings.MasterChoiceTwo = ThreadLocalRandom.current().nextInt(1, 6);
+        settings.MasterChoiceThree = ThreadLocalRandom.current().nextInt(1, 6);
+        settings.MasterChoiceFour = ThreadLocalRandom.current().nextInt(1, 6);
 
-        int MasterChooses[] = {MasterChoiceOne, MasterChoiceTwo, MasterChoiceThree, MasterChoiceFour};
+        List<Integer> MasterChooses = new ArrayList<>();
+        MasterChooses.add(settings.MasterChoiceOne);
+        MasterChooses.add(settings.MasterChoiceTwo);
+        MasterChooses.add(settings.MasterChoiceThree);
+        MasterChooses.add(settings.MasterChoiceFour);
 
         do {
-            for (; getTries() <= getMaxTries(); setTries(getTries() + 1)) {
-                if (isEvaluated()) {
-                    for (int i = 0; i < 4; i++) {
-                        if (UserChooses[i] == MasterChooses[i]) {
-                            setGameWon(true);
-                            System.out.println("Game Won!!");
+            if (settings.isEvaluated()) {
+                int countColorsAtWrongPlace = 0;
+                int rightPlace = 0;
+
+                System.out.println(settings.isEvaluated());
+
+                        for (int i = 0; i < 4; i++) {
+
+
+                            System.out.println("User: " + MasterColor(settings.UserChoices.get(i)));
+
+                            if (settings.UserChoices.contains(MasterChooses.get(i))) {
+                                if (settings.UserChoices.get(i).equals(MasterChooses.get(i))) {
+
+                                    if (settings.UserChoices.equals(MasterChooses)){
+                                        System.out.println("Game won!!!");
+                                        settings.setGameWon(true);
+                                    }
+                                    rightPlace++;
+                                }
+                                countColorsAtWrongPlace++;
+
+                            }
+
                         }
-                    }
-                    setEvaluated(false);
-                }
+                        countColorsAtWrongPlace = countColorsAtWrongPlace - rightPlace;
+                        System.out.println("You had " + countColorsAtWrongPlace +
+                                " right color(s), but at wrong place and " +
+                                rightPlace + " color(s) at the right place!" );
+                        settings.UserChoices.clear();
+                        settings.setEvaluated(false);
+                        settings.setTries(settings.getTries() + 1);
 
             }
-        } while(isEvaluated());
+           // System.out.println(settings.getTries());
+        } while(settings.getTries() <= settings.getMaxTries());
+        System.out.println("You lost, sorry!");
+
+        for (int i = 0; i < 4; i++) {
+        System.out.println("Computer: " + MasterColor(MasterChooses.get(i)));
+        }
 
     }
 
