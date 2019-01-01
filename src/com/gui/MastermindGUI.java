@@ -25,6 +25,7 @@ public class MastermindGUI extends JFrame {
         this.settings = settings;
         this.gameFunctions = gameFunctions;
         initComponents();
+        refreshButtons();
     }
 
     public void button2ActionPerformed(ActionEvent e){
@@ -32,6 +33,7 @@ public class MastermindGUI extends JFrame {
 
         if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(1);
+            refreshButtons();
         }
     }
 
@@ -39,6 +41,7 @@ public class MastermindGUI extends JFrame {
         // white
         if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(2);
+            refreshButtons();
         }
     }
 
@@ -47,6 +50,7 @@ public class MastermindGUI extends JFrame {
         // red
         if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(3);
+            refreshButtons();
         }
     }
 
@@ -54,6 +58,7 @@ public class MastermindGUI extends JFrame {
         // purple
         if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(4);
+            refreshButtons();
         }
     }
 
@@ -61,6 +66,7 @@ public class MastermindGUI extends JFrame {
         // green
         if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(5);
+            refreshButtons();
         }
     }
 
@@ -68,6 +74,7 @@ public class MastermindGUI extends JFrame {
         // blue
         if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(6);
+            refreshButtons();
         }
     }
 
@@ -75,14 +82,63 @@ public class MastermindGUI extends JFrame {
         // evaluate
             if (settings.UserChoices.size() >= settings.getColorCounts()) {
                 settings.setEvaluated(true);
+                refreshButtons();
             } else {
                 int size = settings.UserChoices.size();
                 System.out.println("You only have selected " + size + " colors!, you need to select " + settings.getColorCounts() + "!");
             }
             /**System.out.println("Pressed evaluate");
             System.out.println("User contains: "+ settings.UserChoices.size() + " elements");
-            System.out.println("Player name: " + settings.getPlayerName()); */
+            System.out.println("Player name: " + settings.getPlayerName());
+             */
 
+    }
+
+    public void refreshButtons(){
+        //---- choiseButton01 ----
+
+        if (settings.UserChoices.size() < 1) {
+            choiseButton01.setVisible(false);
+        } else {
+            choiseButton01.setVisible(true);
+            choiseButton01.setText(gameFunctions.MasterColor(settings.UserChoices.get(0)));
+            choiseButton01.setForeground(new Color(0, 153, 204));
+            choiseButton01.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        }
+
+        //---- choiseButton02 ----
+
+        if (settings.UserChoices.size() < 2) {
+            choiseButton02.setVisible(false);
+
+        } else{
+            choiseButton02.setVisible(true);
+            choiseButton02.setText(gameFunctions.MasterColor(settings.UserChoices.get(1)));
+            choiseButton02.setForeground(new Color(0, 153, 204));
+            choiseButton02.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        }
+
+        //---- choiseButton03 ----
+        if (settings.UserChoices.size() < 3) {
+            choiseButton03.setVisible(false);
+
+        } else {
+            choiseButton03.setVisible(true);
+            choiseButton03.setText(gameFunctions.MasterColor(settings.UserChoices.get(2)));
+            choiseButton03.setForeground(new Color(0, 153, 204));
+            choiseButton03.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        }
+
+        //---- choiseButton04 ----
+
+        if (settings.UserChoices.size() < 4) {
+            choiseButton04.setVisible(false);
+        } else {
+            choiseButton04.setVisible(true);
+            choiseButton04.setText(gameFunctions.MasterColor(settings.UserChoices.get(3)));
+            choiseButton04.setForeground(new Color(0, 153, 204));
+            choiseButton04.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        }
     }
 
     private void initComponents() {
@@ -134,31 +190,37 @@ public class MastermindGUI extends JFrame {
         //---- button2 ----
         button2.setText("Black");
         button2.setForeground(Color.black);
+        button2.addActionListener(e -> button2ActionPerformed(e));
         button2.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button3 ----
         button3.setText("White");
         button3.setForeground(Color.white);
+        button3.addActionListener(e -> button3ActionPerformed(e));
         button3.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button4 ----
         button4.setText("Red");
         button4.setForeground(Color.red);
+        button4.addActionListener(e -> button4ActionPerformed(e));
         button4.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button5 ----
         button5.setText("Purple");
         button5.setForeground(new Color(153, 0, 153));
+        button5.addActionListener(e -> button5ActionPerformed(e));
         button5.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button6 ----
         button6.setText("Green");
         button6.setForeground(new Color(0, 153, 0));
+        button6.addActionListener(e -> button6ActionPerformed(e));
         button6.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button7 ----
         button7.setText("Blue");
         button7.setForeground(new Color(0, 153, 204));
+        button7.addActionListener(e -> button7ActionPerformed(e));
         button7.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- label6 ----
@@ -168,27 +230,10 @@ public class MastermindGUI extends JFrame {
         //---- button8 ----
         button8.setText("Evaluate");
         button8.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button8.addActionListener(e -> button8ActionPerformed(e));
         button8.setBackground(new Color(204, 204, 204));
 
-        //---- choiseButton01 ----
-        choiseButton01.setText("Blue");
-        choiseButton01.setForeground(new Color(0, 153, 204));
-        choiseButton01.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
-        //---- choiseButton02 ----
-        choiseButton02.setText("Blue");
-        choiseButton02.setForeground(new Color(0, 153, 204));
-        choiseButton02.setFont(new Font("Segoe UI", Font.BOLD, 20));
-
-        //---- choiseButton03 ----
-        choiseButton03.setText("Blue");
-        choiseButton03.setForeground(new Color(0, 153, 204));
-        choiseButton03.setFont(new Font("Segoe UI", Font.BOLD, 20));
-
-        //---- choiseButton04 ----
-        choiseButton04.setText("Blue");
-        choiseButton04.setForeground(new Color(0, 153, 204));
-        choiseButton04.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
