@@ -31,6 +31,7 @@ public class CreatePlayerNameWindow extends JFrame {
     private void button1ActionPerformed(ActionEvent e) {
         setVisible(false);
 
+
         settings.setRunning(true);
         settings.setDifficulty(getDifficulty());
         settings.setPlayerName(getPlayerName());
