@@ -14,7 +14,7 @@ public class Game {
     public Game(Settings settings, GameFunctions gameFunctions){
         this.settings = settings;
         this.gameFunctions = gameFunctions;
-        mainGUI = new MastermindGUI(settings);
+        mainGUI = new MastermindGUI(settings, gameFunctions);
 
     }
 
@@ -56,9 +56,7 @@ public class Game {
 
 
         Thread gameThread = new NewThread();
-
         gameThread.start();
-
         mainGUI.setVisible(true);
 
     }

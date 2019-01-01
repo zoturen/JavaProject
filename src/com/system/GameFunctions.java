@@ -53,7 +53,7 @@ public class GameFunctions {
 
     }
 
-    private String MasterColor(int MasterChoice){
+    public String MasterColor(int MasterChoice){
 
         switch (MasterChoice) {
             case 1:
@@ -79,7 +79,6 @@ public class GameFunctions {
                 int countColorsAtWrongPlace = 0;
                 int rightPlace = 0;
 
-                System.out.println(settings.isEvaluated());
 
                 for (int i = 0; i < settings.getColorCounts(); i++) {
 
@@ -119,7 +118,7 @@ public class GameFunctions {
         } while(settings.getTries() <= settings.getMaxTries());
         System.out.println("You lost, sorry!");
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < settings.getColorCounts(); i++) {
             System.out.println("Computer: " + MasterColor(MasterChooses.get(i)));
         }
     }
