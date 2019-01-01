@@ -27,14 +27,14 @@ public class MastermindGUI extends JFrame {
     public void button2ActionPerformed(ActionEvent e){
         // black
 
-        if (settings.UserChoices.size() <= 4) {
+        if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(1);
         }
     }
 
     public void button3ActionPerformed(ActionEvent e) {
         // white
-        if (settings.UserChoices.size() <= 4) {
+        if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(2);
         }
     }
@@ -42,39 +42,39 @@ public class MastermindGUI extends JFrame {
 
     public void button4ActionPerformed(ActionEvent e){
         // red
-        if (settings.UserChoices.size() <= 4) {
+        if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(3);
         }
     }
 
     public void button5ActionPerformed(ActionEvent e){
         // purple
-        if (settings.UserChoices.size() <= 4) {
+        if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(4);
         }
     }
 
     public void button6ActionPerformed(ActionEvent e){
         // green
-        if (settings.UserChoices.size() <= 4) {
+        if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(5);
         }
     }
 
     public void button7ActionPerformed(ActionEvent e){
         // blue
-        if (settings.UserChoices.size() <= 4) {
+        if (settings.UserChoices.size() <= settings.getColorCounts()) {
             settings.UserChoices.add(6);
         }
     }
 
     public void button8ActionPerformed(ActionEvent e){
         // evaluate
-            if (settings.UserChoices.size() >= 4) {
+            if (settings.UserChoices.size() >= settings.getColorCounts()) {
                 settings.setEvaluated(true);
             } else {
                 int size = settings.UserChoices.size();
-                System.out.println("You only have selected " + size + " colors!, you need to select 4!");
+                System.out.println("You only have selected " + size + " colors!, you need to select " + settings.getColorCounts() + "!");
             }
             /**System.out.println("Pressed evaluate");
             System.out.println("User contains: "+ settings.UserChoices.size() + " elements");
@@ -131,8 +131,8 @@ public class MastermindGUI extends JFrame {
         button2.setForeground(Color.black);
         button2.addActionListener(e -> button2ActionPerformed(e));
         button2.setFont(new Font("Segoe UI", Font.BOLD, 20));
-        button2.setIcon(new ImageIcon(this.getClass().getResource("../Content/Dot_Black.png")) {
-        });
+        //button2.setIcon(new ImageIcon(this.getClass().getResource("../Content/Dot_Black.png")) {
+        //});
 
         //---- button3 ----
         button3.setText("White");

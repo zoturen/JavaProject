@@ -20,10 +20,6 @@ public class Game {
 
     public class NewThread extends Thread{
 
-        private NewThread(){
-
-        }
-
         @Override
         public void run() {
 
@@ -33,12 +29,18 @@ public class Game {
 
                 switch (settings.getDifficulty()) {
                     case "Easy":
+                        settings.setColorCounts(4);
+                        settings.setMaxTries(8);
                         gameFunctions.EasyGameMode();
                         break;
                     case "Normal":
+                        settings.setColorCounts(4);
+                        settings.setMaxTries(14);
                         gameFunctions.MediumGameMode();
                         break;
                     case "Hard":
+                        settings.setColorCounts(6);
+                        settings.setMaxTries(20);
                         gameFunctions.HardGameMode();
                         break;
                 }

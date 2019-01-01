@@ -1,6 +1,5 @@
 package com.system.settings;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +19,10 @@ public class Settings {
 
     private int maxTries = 10;
 
+
+
+    private int colorCounts;
+
     private String difficulty;
     private String playerName;
 
@@ -31,35 +34,9 @@ public class Settings {
     public int MasterChoiceFour;
 
 
-    public String MasterColorOne;
-    public String MasterColorTwo;
-    public String MasterColorThree;
-    public String MasterColorFour;
-    public String MasterColorFive;
-    public String MasterColorSix;
-
-
-    public int UserChoiceOne;
-    public int UserChoiceTwo;
-    public int UserChoiceThree;
-    public int UserChoiceFour;
-    public int UserChoiceFive;
-    public int UserChoiceSix;
 
     public List<Integer> UserChoices = new ArrayList<Integer>();
 
-    /** public int evaluateUserChoices(int one, int two, int three, int four){
-        do {
-            UserChooses[0] = one;
-            UserChooses[1] = two;
-            UserChooses[2] = three;
-            UserChooses[3] = four;
-
-        } while(!isEvaluated());
-        return -1;
-    }
-
-*/
     public boolean isEvaluated() { return evaluated; }
 
     public boolean isRunning() {
@@ -107,4 +84,16 @@ public class Settings {
     }
 
     public void setEvaluated(boolean evaluated) { this.evaluated = evaluated; }
+
+    public int getColorCounts() {
+        return colorCounts;
+    }
+
+    public void setColorCounts(int colorCounts) {
+        this.colorCounts = colorCounts;
+    }
+
+    public void setMaxTries(int maxTries) {
+        this.maxTries = maxTries;
+    }
 }
