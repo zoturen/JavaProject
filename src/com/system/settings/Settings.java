@@ -9,6 +9,10 @@ public class Settings {
     volatile private boolean gameWon = false;
     volatile private boolean evaluated = false;
 
+
+
+    volatile private boolean gameLost = false;
+
     private int tries = 1;
     private int maxTries = 10;
     private int colorCounts;
@@ -22,10 +26,10 @@ public class Settings {
     public int MasterChoiceThree;
     public int MasterChoiceFour;
 
+    volatile public List<Integer> MasterChooses = new ArrayList<>();
 
-
-   volatile public ArrayList<Integer> UserChoices = new ArrayList<Integer>(4);
-   volatile public ArrayList<String> UserList = new ArrayList<>();
+    volatile public ArrayList<Integer> UserChoices = new ArrayList<Integer>(4);
+    volatile public ArrayList<String> UserList = new ArrayList<>();
 
     public boolean isEvaluated() { return evaluated; }
     public boolean isRunning() {
@@ -70,5 +74,13 @@ public class Settings {
     }
     public void setMaxTries(int maxTries) {
         this.maxTries = maxTries;
+    }
+
+    public boolean isGameLost() {
+        return gameLost;
+    }
+
+    public void setGameLost(boolean gameLost) {
+        this.gameLost = gameLost;
     }
 }

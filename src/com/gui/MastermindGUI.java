@@ -87,15 +87,17 @@ public class MastermindGUI extends JFrame {
                 settings.UserList.add(gameFunctions.MasterColor(settings.UserChoices.get(2)));
                 settings.UserList.add(gameFunctions.MasterColor(settings.UserChoices.get(3)));
                 settings.setEvaluated(true);
-                refreshButtons();
             } else {
                 int size = settings.UserChoices.size();
                 System.out.println("You only have selected " + size + " colors!, you need to select " + settings.getColorCounts() + "!");
             }
-            /**System.out.println("Pressed evaluate");
-            System.out.println("User contains: "+ settings.UserChoices.size() + " elements");
-            System.out.println("Player name: " + settings.getPlayerName());
-             */
+
+        refreshButtons();
+
+        /**System.out.println("Pressed evaluate");
+        System.out.println("User contains: "+ settings.UserChoices.size() + " elements");
+        System.out.println("Player name: " + settings.getPlayerName());
+         */
 
     }
 
@@ -176,6 +178,13 @@ public class MastermindGUI extends JFrame {
             choiseButton04.setForeground(new Color(0, 153, 204));
             choiseButton04.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
+        }
+
+        if (settings.isGameWon() || settings.isGameLost()){
+            label1.setText(gameFunctions.MasterColor(settings.MasterChooses.get(0)));
+            label3.setText(gameFunctions.MasterColor(settings.MasterChooses.get(1)));
+            label4.setText(gameFunctions.MasterColor(settings.MasterChooses.get(2)));
+            label5.setText(gameFunctions.MasterColor(settings.MasterChooses.get(3)));
         }
 
         //---- EvaluationList01 ----

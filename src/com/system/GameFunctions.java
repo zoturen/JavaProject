@@ -19,11 +19,11 @@ public class GameFunctions {
 
     public void EasyGameMode(){
         System.out.println("Easy");
-        List<Integer> MasterChooses = Arrays.asList(1, 2, 3, 4, 5, 6);
-        Collections.shuffle(MasterChooses);
+        settings.MasterChooses = Arrays.asList(1, 2, 3, 4, 5, 6);
+        Collections.shuffle(settings.MasterChooses);
 
 
-        RunGame(MasterChooses.subList(0, 4));
+        RunGame(settings.MasterChooses.subList(0, 4));
 
     }
 
@@ -35,13 +35,13 @@ public class GameFunctions {
         settings.MasterChoiceThree = ThreadLocalRandom.current().nextInt(1, 6);
         settings.MasterChoiceFour = ThreadLocalRandom.current().nextInt(1, 6);
 
-        List<Integer> MasterChooses = new ArrayList<>();
-        MasterChooses.add(settings.MasterChoiceOne);
-        MasterChooses.add(settings.MasterChoiceTwo);
-        MasterChooses.add(settings.MasterChoiceThree);
-        MasterChooses.add(settings.MasterChoiceFour);
 
-        RunGame(MasterChooses);
+        settings.MasterChooses.add(settings.MasterChoiceOne);
+        settings.MasterChooses.add(settings.MasterChoiceTwo);
+        settings.MasterChooses.add(settings.MasterChoiceThree);
+        settings.MasterChooses.add(settings.MasterChoiceFour);
+
+        RunGame(settings.MasterChooses);
 
 
     }
@@ -49,10 +49,10 @@ public class GameFunctions {
     public void HardGameMode(){
         System.out.println("Hard");
 
-        List<Integer> MasterChooses = Arrays.asList(1, 2, 3, 4, 5, 6);
-        Collections.shuffle(MasterChooses);
+        settings.MasterChooses = Arrays.asList(1, 2, 3, 4, 5, 6);
+        Collections.shuffle(settings.MasterChooses);
 
-        RunGame(MasterChooses);
+        RunGame(settings.MasterChooses);
 
     }
 
@@ -120,6 +120,7 @@ public class GameFunctions {
             // System.out.println(settings.getTries());
         } while(settings.getTries() <= settings.getMaxTries());
         System.out.println("You lost, sorry!");
+        settings.setGameLost(true);
 
         for (int i = 0; i < settings.getColorCounts(); i++) {
             System.out.println("Computer: " + MasterColor(MasterChooses.get(i)));
