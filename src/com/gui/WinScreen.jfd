@@ -1,0 +1,36 @@
+JFDML JFormDesigner: "6.0.5.0.178" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space ::73:x, par l {seq t {comp label1:::p:265:p, space :p:60:p}, seq t {comp label2:::p:177:p, space :p:107:p}, seq t {comp button1:::p:104:p, space :::p, comp button2:::p:104:p, space :p:85:p}}}}"
+			"$verticalGroup": "par l {seq {space :p:40:p, comp label1:::p:33:p, space :::p, comp label2:::p:36:p, space ::104:x, par b {comp button1::b:p::p, comp button2::b:p::p}, space :p:19:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Congratulations!"
+				"font": new java.awt.Font( "Segoe UI", 0, 30 )
+				"horizontalAlignment": 0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "You Win!"
+				"font": new java.awt.Font( "Segoe UI", 0, 22 )
+				"horizontalAlignment": 0
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Go Agian!"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "Exit Game"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
