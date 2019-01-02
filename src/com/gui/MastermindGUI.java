@@ -347,36 +347,42 @@ public class MastermindGUI extends JFrame {
         button2.setForeground(Color.black);
         button2.addActionListener(e -> button2ActionPerformed(e));
         button2.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button2.setIcon(new ImageIcon(getClass().getResource("com/content/Dot_Black.png")));
 
         //---- button3 ----
         button3.setText("White");
         button3.setForeground(Color.white);
         button3.addActionListener(e -> button3ActionPerformed(e));
         button3.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button3.setIcon(new ImageIcon(getClass().getResource("com/content/Dot_White.png")));
 
         //---- button4 ----
         button4.setText("Red");
         button4.setForeground(Color.red);
         button4.addActionListener(e -> button4ActionPerformed(e));
         button4.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button4.setIcon(new ImageIcon(getClass().getResource("com/content/Dot_Red.png")));
 
         //---- button5 ----
         button5.setText("Purple");
         button5.setForeground(new Color(153, 0, 153));
         button5.addActionListener(e -> button5ActionPerformed(e));
         button5.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button5.setIcon(new ImageIcon(getClass().getResource("com/content/Dot_Purple.png")));
 
         //---- button6 ----
         button6.setText("Green");
         button6.setForeground(new Color(0, 153, 0));
         button6.addActionListener(e -> button6ActionPerformed(e));
         button6.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button6.setIcon(new ImageIcon(getClass().getResource("com/content/Dot_Green.png")));
 
         //---- button7 ----
         button7.setText("Blue");
         button7.setForeground(new Color(0, 153, 204));
         button7.addActionListener(e -> button7ActionPerformed(e));
         button7.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button7.setIcon(new ImageIcon(getClass().getResource("com/content/Dot_Blue.png")));
 
         //---- label6 ----
         label6.setText("Pick Your Colors");
