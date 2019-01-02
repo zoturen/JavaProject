@@ -110,12 +110,11 @@ public class CreatePlayerNameWindow extends JFrame {
     private JButton button1;
     private JLabel label1;
 
-    public String getPlayerName() {
-         return textField1.getText();
+    public String getPlayerName()  {
+            return textField1.getText();
     }
 
-    public String getDifficulty() {
-         return comboBox1.getSelectedItem().toString();
+    public String getDifficulty() {  return comboBox1.getSelectedItem().toString();
     }
 
     private JTextField textField1;
