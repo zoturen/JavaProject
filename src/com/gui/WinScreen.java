@@ -4,7 +4,10 @@
 
 package com.gui;
 
+import com.system.Main;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -12,8 +15,24 @@ import javax.swing.GroupLayout;
  * @author Marcus
  */
 public class WinScreen extends JFrame {
-    public WinScreen() {
+
+    private Main main;
+    private CreatePlayerNameWindow playerChoice;
+
+    public WinScreen(Main main, CreatePlayerNameWindow playerChoice) {
+        this.main = main;
+        this.playerChoice = playerChoice;
         initComponents();
+    }
+
+    public void button1ActionPerformed(ActionEvent e){
+        playerChoice.setVisible(true);
+
+    }
+
+    public void button2ActionPerformed(ActionEvent e){
+        System.exit(0);
+
     }
 
     private void initComponents() {
@@ -39,9 +58,11 @@ public class WinScreen extends JFrame {
 
         //---- button1 ----
         button1.setText("Go Agian!");
+        button1.addActionListener(e -> button1ActionPerformed(e));
 
         //---- button2 ----
         button2.setText("Exit Game");
+        button2.addActionListener(e -> button2ActionPerformed(e));
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);

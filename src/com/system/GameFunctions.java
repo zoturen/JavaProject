@@ -126,6 +126,7 @@ public class GameFunctions {
             System.out.println("Computer: " + MasterColor(MasterChooses.get(i)));
 
         }
+
         /**
         gui.label2.setText(MasterColor(MasterChooses.get(0)));
         gui.label2.setText(MasterColor(MasterChooses.get(1)));

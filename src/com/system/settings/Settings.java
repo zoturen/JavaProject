@@ -11,6 +11,10 @@ public class Settings {
 
 
 
+    volatile private boolean playAgain = false;
+
+
+
     volatile private boolean gameLost = false;
 
     private int tries = 1;
@@ -82,5 +86,13 @@ public class Settings {
 
     public void setGameLost(boolean gameLost) {
         this.gameLost = gameLost;
+    }
+
+    public boolean isPlayAgain() {
+        return playAgain;
+    }
+
+    public void setPlayAgain(boolean playAgain) {
+        this.playAgain = playAgain;
     }
 }

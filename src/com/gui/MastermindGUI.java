@@ -185,6 +185,21 @@ public class MastermindGUI extends JFrame {
             label3.setText(gameFunctions.MasterColor(settings.MasterChooses.get(1)));
             label4.setText(gameFunctions.MasterColor(settings.MasterChooses.get(2)));
             label5.setText(gameFunctions.MasterColor(settings.MasterChooses.get(3)));
+
+            label1.setFont(new Font("Segoe UI", Font.BOLD, 12));
+            label3.setFont(new Font("Segoe UI", Font.BOLD, 12));
+            label4.setFont(new Font("Segoe UI", Font.BOLD, 12));
+            label5.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        } else{
+            label1.setText("?");
+            label3.setText("?");
+            label4.setText("?");
+            label5.setText("?");
+
+            label1.setFont(new Font("Segoe UI", Font.BOLD, 48));
+            label3.setFont(new Font("Segoe UI", Font.BOLD, 48));
+            label4.setFont(new Font("Segoe UI", Font.BOLD, 48));
+            label5.setFont(new Font("Segoe UI", Font.BOLD, 48));
         }
 
         //---- EvaluationList01 ----
@@ -327,20 +342,8 @@ public class MastermindGUI extends JFrame {
         label2.setHorizontalAlignment(SwingConstants.CENTER);
 
         //---- label1 ----
-        label1.setText("?");
-        label1.setFont(new Font("Segoe UI", Font.BOLD, 48));
 
-        //---- label3 ----
-        label3.setText("?");
-        label3.setFont(new Font("Segoe UI", Font.BOLD, 48));
 
-        //---- label4 ----
-        label4.setText("?");
-        label4.setFont(new Font("Segoe UI", Font.BOLD, 48));
-
-        //---- label5 ----
-        label5.setText("?");
-        label5.setFont(new Font("Segoe UI", Font.BOLD, 48));
 
         //---- button2 ----
         button2.setText("Black");
