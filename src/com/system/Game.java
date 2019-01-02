@@ -14,12 +14,13 @@ public class Game {
 
 
 
-    public Game(Settings settings, GameFunctions gameFunctions, Main main, WinScreen winScreen, MastermindGUI mainGUI){
+    public Game(Settings settings, GameFunctions gameFunctions, Main main, MastermindGUI mainGUI){
         this.settings = settings;
         this.gameFunctions = gameFunctions;
         this.mainGUI = mainGUI;
         this.main = main;
-        this.winScreen = winScreen;
+        this.winScreen = new WinScreen(main, main.playerChoice, mainGUI);
+
 
     }
 

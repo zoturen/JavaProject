@@ -12,8 +12,8 @@ public class Main {
     private Settings settings;
     private GameFunctions gameFunctions;
     private Game game;
-    private CreatePlayerNameWindow playerChoice;
-    private WinScreen winScreen;
+    public CreatePlayerNameWindow playerChoice;
+    public WinScreen winScreen;
     private MastermindGUI mainGUI;
 
 
@@ -21,9 +21,10 @@ public class Main {
         this.settings = new Settings();
         this.gameFunctions = new GameFunctions(settings);
         this.mainGUI = new MastermindGUI(settings, gameFunctions);
-        this.winScreen = new WinScreen(this, playerChoice, mainGUI);
-        this.game = new Game(settings, gameFunctions, this, winScreen, mainGUI);
+        this.game = new Game(settings, gameFunctions, this,  mainGUI);
         this.playerChoice = new CreatePlayerNameWindow(settings, game);
+
+
         playerChoice.setVisible(true);
     }
 
