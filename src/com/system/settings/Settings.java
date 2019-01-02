@@ -24,7 +24,9 @@ public class Settings {
 
 
 
-    public List<Integer> UserChoices = new ArrayList<Integer>();
+   volatile public ArrayList<Integer> UserChoices = new ArrayList<Integer>(4);
+   volatile public ArrayList<String> UserList = new ArrayList<>();
+
     public boolean isEvaluated() { return evaluated; }
     public boolean isRunning() {
         return isRunning;

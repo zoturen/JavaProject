@@ -10,6 +10,7 @@ import com.system.settings.Settings;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Collections;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -81,6 +82,10 @@ public class MastermindGUI extends JFrame {
     public void button8ActionPerformed(ActionEvent e){
         // evaluate
             if (settings.UserChoices.size() >= settings.getColorCounts()) {
+                settings.UserList.add(gameFunctions.MasterColor(settings.UserChoices.get(0)));
+                settings.UserList.add(gameFunctions.MasterColor(settings.UserChoices.get(1)));
+                settings.UserList.add(gameFunctions.MasterColor(settings.UserChoices.get(2)));
+                settings.UserList.add(gameFunctions.MasterColor(settings.UserChoices.get(3)));
                 settings.setEvaluated(true);
                 refreshButtons();
             } else {
@@ -94,50 +99,173 @@ public class MastermindGUI extends JFrame {
 
     }
 
+    private void choiseButton01ActionPerformed(ActionEvent e){
+        if (settings.UserChoices.size() >= 1)
+        settings.UserChoices.remove(0);
+        refreshButtons();
+        System.out.println(settings.UserChoices.size());
+
+    }
+
+    private void choiseButton02ActionPerformed(ActionEvent e){
+        if (settings.UserChoices.size() >= 2)
+            settings.UserChoices.remove(1);
+        refreshButtons();
+        System.out.println(settings.UserChoices.size());
+    }
+
+    private void choiseButton03ActionPerformed(ActionEvent e){
+        if (settings.UserChoices.size() >= 4)
+
+            settings.UserChoices.remove(3);
+        refreshButtons();
+        System.out.println(settings.UserChoices.size());
+    }
+
+    private void choiseButton04ActionPerformed(ActionEvent e){
+        if (settings.UserChoices.size() >= 3)
+
+            settings.UserChoices.remove(2);
+        refreshButtons();
+        System.out.println(settings.UserChoices.size());
+    }
+
     public void refreshButtons(){
+
+
         //---- choiseButton01 ----
 
         if (settings.UserChoices.size() < 1) {
-            choiseButton01.setVisible(false);
+            choiseButton01.setText("");
         } else {
-            choiseButton01.setVisible(true);
             choiseButton01.setText(gameFunctions.MasterColor(settings.UserChoices.get(0)));
             choiseButton01.setForeground(new Color(0, 153, 204));
             choiseButton01.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
         }
 
         //---- choiseButton02 ----
 
         if (settings.UserChoices.size() < 2) {
-            choiseButton02.setVisible(false);
+            choiseButton02.setText("");
 
-        } else{
-            choiseButton02.setVisible(true);
+        } else {
             choiseButton02.setText(gameFunctions.MasterColor(settings.UserChoices.get(1)));
             choiseButton02.setForeground(new Color(0, 153, 204));
             choiseButton02.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
         }
 
         //---- choiseButton03 ----
-        if (settings.UserChoices.size() < 3) {
-            choiseButton03.setVisible(false);
+        if (settings.UserChoices.size() < 4) {
+            choiseButton03.setText("");
 
         } else {
-            choiseButton03.setVisible(true);
-            choiseButton03.setText(gameFunctions.MasterColor(settings.UserChoices.get(2)));
+            choiseButton03.setText(gameFunctions.MasterColor(settings.UserChoices.get(3)));
             choiseButton03.setForeground(new Color(0, 153, 204));
             choiseButton03.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
         }
 
         //---- choiseButton04 ----
 
-        if (settings.UserChoices.size() < 4) {
-            choiseButton04.setVisible(false);
+        if (settings.UserChoices.size() < 3) {
+            choiseButton04.setText("");
         } else {
-            choiseButton04.setVisible(true);
-            choiseButton04.setText(gameFunctions.MasterColor(settings.UserChoices.get(3)));
+            choiseButton04.setText(gameFunctions.MasterColor(settings.UserChoices.get(2)));
             choiseButton04.setForeground(new Color(0, 153, 204));
             choiseButton04.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
+        }
+
+        //---- EvaluationList01 ----
+        if (settings.UserList.size() > 1) {
+            EvaluationList01.setText(
+                            settings.UserList.get(0) + " " +
+                            settings.UserList.get(1) + " " +
+                            settings.UserList.get(2) + " " +
+                            settings.UserList.get(3) + " " );
+        }
+
+        //---- EvaluationList2 ----
+        if (settings.UserList.size() > 4) {
+            EvaluationList2.setText(
+                            settings.UserList.get(4) + " " +
+                            settings.UserList.get(5) + " " +
+                            settings.UserList.get(6) + " " +
+                            settings.UserList.get(7) + " " );
+        }
+
+        //---- EvaluationList3 ----
+        if (settings.UserList.size() > 8) {
+            EvaluationList3.setText(
+                            settings.UserList.get(8) + " " +
+                            settings.UserList.get(9) + " " +
+                            settings.UserList.get(10) + " " +
+                            settings.UserList.get(11) + " " );
+        }
+
+        //---- EvaluationList4 ----
+        if (settings.UserList.size() > 12) {
+            EvaluationList4.setText(
+                            settings.UserList.get(12) + " " +
+                            settings.UserList.get(13) + " " +
+                            settings.UserList.get(14) + " " +
+                            settings.UserList.get(15) + " " );
+        }
+
+        //---- EvaluationList5 ----
+        if (settings.UserList.size() > 16) {
+            EvaluationList5.setText(
+                            settings.UserList.get(16) + " " +
+                            settings.UserList.get(17) + " " +
+                            settings.UserList.get(18) + " " +
+                            settings.UserList.get(19) + " " );
+        }
+
+        //---- EvaluationList6 ----
+        if (settings.UserList.size() > 20) {
+            EvaluationList6.setText(
+                            settings.UserList.get(20) + " " +
+                            settings.UserList.get(21) + " " +
+                            settings.UserList.get(22) + " " +
+                            settings.UserList.get(23) + " " );
+        }
+
+        //---- EvaluationList7 ----
+        if (settings.UserList.size() > 24) {
+            EvaluationList7.setText(
+                            settings.UserList.get(24) + " " +
+                            settings.UserList.get(25) + " " +
+                            settings.UserList.get(26) + " " +
+                            settings.UserList.get(27) + " " );
+        }
+
+        //---- EvaluationList8 ----
+        if (settings.UserList.size() > 28) {
+            EvaluationList8.setText(
+                            settings.UserList.get(28) + " " +
+                            settings.UserList.get(29) + " " +
+                            settings.UserList.get(30) + " " +
+                            settings.UserList.get(31) + " " );
+        }
+
+        //---- EvaluationList9 ----
+        if (settings.UserList.size() > 32) {
+            EvaluationList9.setText(
+                            settings.UserList.get(32) + " " +
+                            settings.UserList.get(33) + " " +
+                            settings.UserList.get(34) + " " +
+                            settings.UserList.get(35) + " " );
+        }
+
+        //---- EvaluationList10 ----
+        if (settings.UserList.size() > 36) {
+            EvaluationList10.setText(
+                            settings.UserList.get(36) + " " +
+                            settings.UserList.get(37) + " " +
+                            settings.UserList.get(38) + " " +
+                            settings.UserList.get(39) + " " );
         }
     }
 
@@ -175,6 +303,15 @@ public class MastermindGUI extends JFrame {
         //======== this ========
         Container contentPane = getContentPane();
 
+
+        choiseButton01.addActionListener(e -> choiseButton01ActionPerformed(e));
+        choiseButton02.addActionListener(e -> choiseButton02ActionPerformed(e));
+        choiseButton03.addActionListener(e -> choiseButton03ActionPerformed(e));
+        choiseButton04.addActionListener(e -> choiseButton04ActionPerformed(e));
+
+
+
+
         //---- label2 ----
         label2.setText("Mastermind");
         label2.setFont(new Font("Segoe UI", Font.PLAIN, 30));
@@ -199,31 +336,37 @@ public class MastermindGUI extends JFrame {
         //---- button2 ----
         button2.setText("Black");
         button2.setForeground(Color.black);
+        button2.addActionListener(e -> button2ActionPerformed(e));
         button2.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button3 ----
         button3.setText("White");
         button3.setForeground(Color.white);
+        button3.addActionListener(e -> button3ActionPerformed(e));
         button3.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button4 ----
         button4.setText("Red");
         button4.setForeground(Color.red);
+        button4.addActionListener(e -> button4ActionPerformed(e));
         button4.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button5 ----
         button5.setText("Purple");
         button5.setForeground(new Color(153, 0, 153));
+        button5.addActionListener(e -> button5ActionPerformed(e));
         button5.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button6 ----
         button6.setText("Green");
         button6.setForeground(new Color(0, 153, 0));
+        button6.addActionListener(e -> button6ActionPerformed(e));
         button6.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button7 ----
         button7.setText("Blue");
         button7.setForeground(new Color(0, 153, 204));
+        button7.addActionListener(e -> button7ActionPerformed(e));
         button7.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- label6 ----
@@ -233,57 +376,12 @@ public class MastermindGUI extends JFrame {
         //---- button8 ----
         button8.setText("Evaluate");
         button8.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        button8.addActionListener(e -> button8ActionPerformed(e));
         button8.setBackground(new Color(204, 204, 204));
 
-        //---- choiseButton01 ----
-        choiseButton01.setText("Blue");
-        choiseButton01.setForeground(new Color(0, 153, 204));
-        choiseButton01.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
-        //---- choiseButton02 ----
-        choiseButton02.setText("Blue");
-        choiseButton02.setForeground(new Color(0, 153, 204));
-        choiseButton02.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
-        //---- choiseButton03 ----
-        choiseButton03.setText("Blue");
-        choiseButton03.setForeground(new Color(0, 153, 204));
-        choiseButton03.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
-        //---- choiseButton04 ----
-        choiseButton04.setText("Blue");
-        choiseButton04.setForeground(new Color(0, 153, 204));
-        choiseButton04.setFont(new Font("Segoe UI", Font.BOLD, 20));
-
-        //---- EvaluationList01 ----
-        EvaluationList01.setText("text");
-
-        //---- EvaluationList2 ----
-        EvaluationList2.setText("text");
-
-        //---- EvaluationList3 ----
-        EvaluationList3.setText("text");
-
-        //---- EvaluationList4 ----
-        EvaluationList4.setText("text");
-
-        //---- EvaluationList5 ----
-        EvaluationList5.setText("text");
-
-        //---- EvaluationList6 ----
-        EvaluationList6.setText("text");
-
-        //---- EvaluationList7 ----
-        EvaluationList7.setText("text");
-
-        //---- EvaluationList8 ----
-        EvaluationList8.setText("text");
-
-        //---- EvaluationList9 ----
-        EvaluationList9.setText("text");
-
-        //---- EvaluationList10 ----
-        EvaluationList10.setText("text");
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
@@ -404,11 +502,11 @@ public class MastermindGUI extends JFrame {
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Marcus
-    private JLabel label2;
+    public JLabel label2;
     private JLabel label1;
-    private JLabel label3;
-    private JLabel label4;
-    private JLabel label5;
+    public JLabel label3;
+    public JLabel label4;
+    public JLabel label5;
     private JButton button2;
     private JButton button3;
     private JButton button4;

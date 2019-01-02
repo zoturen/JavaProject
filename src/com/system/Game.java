@@ -14,7 +14,7 @@ public class Game {
     public Game(Settings settings, GameFunctions gameFunctions){
         this.settings = settings;
         this.gameFunctions = gameFunctions;
-        mainGUI = new MastermindGUI(settings, gameFunctions);
+        this.mainGUI = new MastermindGUI(settings, gameFunctions);
 
     }
 

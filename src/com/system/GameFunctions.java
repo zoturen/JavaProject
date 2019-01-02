@@ -1,5 +1,6 @@
 package com.system;
 
+import com.gui.MastermindGUI;
 import com.system.settings.Settings;
 
 import java.util.*;
@@ -9,7 +10,9 @@ public class GameFunctions {
 
     private Settings settings;
 
-    public GameFunctions(Settings settings){
+
+    public GameFunctions(Settings settings ){
+
         this.settings = settings;
     }
 
@@ -120,6 +123,14 @@ public class GameFunctions {
 
         for (int i = 0; i < settings.getColorCounts(); i++) {
             System.out.println("Computer: " + MasterColor(MasterChooses.get(i)));
+
         }
+        /**
+        gui.label2.setText(MasterColor(MasterChooses.get(0)));
+        gui.label2.setText(MasterColor(MasterChooses.get(1)));
+        gui.label2.setText(MasterColor(MasterChooses.get(2)));
+        gui.label2.setText(MasterColor(MasterChooses.get(3)));
+        gui.refreshButtons();
+         */
     }
 }
