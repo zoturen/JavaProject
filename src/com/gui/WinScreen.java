@@ -30,6 +30,7 @@ public class WinScreen extends JFrame {
     public void button1ActionPerformed(ActionEvent e){
         playerChoice.setVisible(true);
         mainGUI.setVisible(false);
+        setVisible(false);
 
     }
 
