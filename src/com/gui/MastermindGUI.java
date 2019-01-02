@@ -157,11 +157,20 @@ public class MastermindGUI extends JFrame {
         button7 = new JButton();
         label6 = new JLabel();
         button8 = new JButton();
-        label7 = new JLabel();
         choiseButton01 = new JButton();
         choiseButton02 = new JButton();
         choiseButton03 = new JButton();
         choiseButton04 = new JButton();
+        EvaluationList01 = new JLabel();
+        EvaluationList2 = new JLabel();
+        EvaluationList3 = new JLabel();
+        EvaluationList4 = new JLabel();
+        EvaluationList5 = new JLabel();
+        EvaluationList6 = new JLabel();
+        EvaluationList7 = new JLabel();
+        EvaluationList8 = new JLabel();
+        EvaluationList9 = new JLabel();
+        EvaluationList10 = new JLabel();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -190,37 +199,31 @@ public class MastermindGUI extends JFrame {
         //---- button2 ----
         button2.setText("Black");
         button2.setForeground(Color.black);
-        button2.addActionListener(e -> button2ActionPerformed(e));
         button2.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button3 ----
         button3.setText("White");
         button3.setForeground(Color.white);
-        button3.addActionListener(e -> button3ActionPerformed(e));
         button3.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button4 ----
         button4.setText("Red");
         button4.setForeground(Color.red);
-        button4.addActionListener(e -> button4ActionPerformed(e));
         button4.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button5 ----
         button5.setText("Purple");
         button5.setForeground(new Color(153, 0, 153));
-        button5.addActionListener(e -> button5ActionPerformed(e));
         button5.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button6 ----
         button6.setText("Green");
         button6.setForeground(new Color(0, 153, 0));
-        button6.addActionListener(e -> button6ActionPerformed(e));
         button6.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- button7 ----
         button7.setText("Blue");
         button7.setForeground(new Color(0, 153, 204));
-        button7.addActionListener(e -> button7ActionPerformed(e));
         button7.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
         //---- label6 ----
@@ -230,43 +233,75 @@ public class MastermindGUI extends JFrame {
         //---- button8 ----
         button8.setText("Evaluate");
         button8.setFont(new Font("Segoe UI", Font.BOLD, 20));
-        button8.addActionListener(e -> button8ActionPerformed(e));
         button8.setBackground(new Color(204, 204, 204));
 
+        //---- choiseButton01 ----
+        choiseButton01.setText("Blue");
+        choiseButton01.setForeground(new Color(0, 153, 204));
+        choiseButton01.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
+        //---- choiseButton02 ----
+        choiseButton02.setText("Blue");
+        choiseButton02.setForeground(new Color(0, 153, 204));
+        choiseButton02.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
+        //---- choiseButton03 ----
+        choiseButton03.setText("Blue");
+        choiseButton03.setForeground(new Color(0, 153, 204));
+        choiseButton03.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
+        //---- choiseButton04 ----
+        choiseButton04.setText("Blue");
+        choiseButton04.setForeground(new Color(0, 153, 204));
+        choiseButton04.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
+        //---- EvaluationList01 ----
+        EvaluationList01.setText("text");
+
+        //---- EvaluationList2 ----
+        EvaluationList2.setText("text");
+
+        //---- EvaluationList3 ----
+        EvaluationList3.setText("text");
+
+        //---- EvaluationList4 ----
+        EvaluationList4.setText("text");
+
+        //---- EvaluationList5 ----
+        EvaluationList5.setText("text");
+
+        //---- EvaluationList6 ----
+        EvaluationList6.setText("text");
+
+        //---- EvaluationList7 ----
+        EvaluationList7.setText("text");
+
+        //---- EvaluationList8 ----
+        EvaluationList8.setText("text");
+
+        //---- EvaluationList9 ----
+        EvaluationList9.setText("text");
+
+        //---- EvaluationList10 ----
+        EvaluationList10.setText("text");
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addContainerGap(144, Short.MAX_VALUE)
-                    .addComponent(button8, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(289, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(0, 208, Short.MAX_VALUE)
-                            .addComponent(label1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(label3, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(label4, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(label5, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                            .addComponent(label7, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(contentPaneLayout.createSequentialGroup()
-                                    .addComponent(choiseButton01, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(choiseButton02, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(choiseButton04, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(choiseButton03, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 180, Short.MAX_VALUE)
+                    .addComponent(label2, GroupLayout.PREFERRED_SIZE, 262, GroupLayout.PREFERRED_SIZE)
+                    .addGap(171, 171, 171))
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGap(212, 212, 212)
+                    .addComponent(button8, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(221, Short.MAX_VALUE))
+                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                    .addContainerGap(78, Short.MAX_VALUE)
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addGroup(contentPaneLayout.createSequentialGroup()
                                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                         .addComponent(label6)
@@ -280,14 +315,38 @@ public class MastermindGUI extends JFrame {
                                             .addComponent(button4, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
                                             .addGap(6, 6, 6)))
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(button2, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(button2, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(contentPaneLayout.createParallelGroup()
+                                    .addComponent(EvaluationList01, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(contentPaneLayout.createSequentialGroup()
+                                        .addComponent(choiseButton01, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(choiseButton02, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(choiseButton04, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(choiseButton03, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(EvaluationList2, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList3, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList4, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList5, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList6, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList7, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList8, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList9, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EvaluationList10, GroupLayout.PREFERRED_SIZE, 298, GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(button3, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)))
-                    .addGap(79, 79, 79))
-                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addGap(0, 180, Short.MAX_VALUE)
-                    .addComponent(label2, GroupLayout.PREFERRED_SIZE, 262, GroupLayout.PREFERRED_SIZE)
-                    .addGap(171, 171, 171))
+                            .addComponent(button3, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                            .addGap(79, 79, 79))
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addComponent(label1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(label3, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(label4, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(label5, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+                            .addGap(196, 196, 196))))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -299,15 +358,33 @@ public class MastermindGUI extends JFrame {
                         .addComponent(label4, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label3, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
-                    .addComponent(label7, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
-                    .addGap(48, 48, 48)
+                    .addGap(18, 18, 18)
+                    .addComponent(EvaluationList10, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EvaluationList9, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList8, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList7, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList6, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList5, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList3, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList2, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(EvaluationList01, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(choiseButton02, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(choiseButton01, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
                         .addComponent(choiseButton04, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(choiseButton03, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(choiseButton03, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(choiseButton01, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(label6, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -317,9 +394,9 @@ public class MastermindGUI extends JFrame {
                         .addComponent(button4, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
                         .addComponent(button2, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
                         .addComponent(button3, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(button8, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-                    .addGap(14, 14, 14))
+                    .addGap(20, 20, 20))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -340,10 +417,19 @@ public class MastermindGUI extends JFrame {
     private JButton button7;
     private JLabel label6;
     private JButton button8;
-    private JLabel label7;
     private JButton choiseButton01;
     private JButton choiseButton02;
     private JButton choiseButton03;
     private JButton choiseButton04;
+    private JLabel EvaluationList01;
+    private JLabel EvaluationList2;
+    private JLabel EvaluationList3;
+    private JLabel EvaluationList4;
+    private JLabel EvaluationList5;
+    private JLabel EvaluationList6;
+    private JLabel EvaluationList7;
+    private JLabel EvaluationList8;
+    private JLabel EvaluationList9;
+    private JLabel EvaluationList10;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
