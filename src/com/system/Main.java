@@ -20,8 +20,8 @@ public class Main {
     private Main(){
         this.settings = new Settings();
         this.gameFunctions = new GameFunctions(settings);
-        this.winScreen = new WinScreen(this, playerChoice);
         this.mainGUI = new MastermindGUI(settings, gameFunctions);
+        this.winScreen = new WinScreen(this, playerChoice, mainGUI);
         this.game = new Game(settings, gameFunctions, this, winScreen, mainGUI);
         this.playerChoice = new CreatePlayerNameWindow(settings, game);
         playerChoice.setVisible(true);

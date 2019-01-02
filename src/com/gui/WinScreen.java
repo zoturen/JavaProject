@@ -18,15 +18,18 @@ public class WinScreen extends JFrame {
 
     private Main main;
     private CreatePlayerNameWindow playerChoice;
+    private MastermindGUI mainGUI;
 
-    public WinScreen(Main main, CreatePlayerNameWindow playerChoice) {
+    public WinScreen(Main main, CreatePlayerNameWindow playerChoice, MastermindGUI mainGUI) {
         this.main = main;
         this.playerChoice = playerChoice;
+        this.mainGUI = mainGUI;
         initComponents();
     }
 
     public void button1ActionPerformed(ActionEvent e){
         playerChoice.setVisible(true);
+        mainGUI.setVisible(false);
 
     }
 
